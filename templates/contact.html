@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}contact{% endblock title  %}
+{% block body %}
+<div class ="container">
+
+<!-- Contact Form Section -->
+<section id="contact" class="contact section">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us</p>
+      </div>
+  
+      <form action="{% url 'contact' %}" method="POST" data-aos="fade-up" data-aos-delay="100">
+        {% csrf_token %}
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+          </div>
+  
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+          </div>
+  
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="pnumber">Phone Number</label>
+              <input type="tel" class="form-control" id="pnumber" name="pnumber" required>
+            </div>
+          </div>
+  
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="desc">Description</label>
+              <textarea class="form-control" id="desc" name="desc" rows="4" required></textarea>
+            </div>
+          </div>
+  
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+  
+
+</div>
+
+{% endblock body  %}
